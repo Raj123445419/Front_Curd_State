@@ -65,7 +65,7 @@
     };
 
     try {
-      const response = await axios.post('https://curd-state.onrender.com/api/submit/', payload);
+      const response = await axios.post('https://curd-state.onrender.com/', payload);
       alert(response.data.message);
       
       // Optional: Form reset karne ke liye
