@@ -75,10 +75,10 @@
       setStates([]);
       setCities([]);
     } catch (error) {
-      console.error("Error saving data:", error);
-      alert("Failed to save data!");
+      console.error("Error saving data:", error.response?.data || error.message);
+      alert("Failed to save data: " + JSON.stringify(error.response?.data || error.message));
     }
-  };
+};
 
     return (
         <div className="flex justify-center items-center h-screen bg-gray-100">
