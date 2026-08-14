@@ -13,7 +13,7 @@
 
     // 1. Load Countries on initial render
     useEffect(() => {
-        axios.get('http://127.0.0.1:8000/api/countries/')
+        axios.get('https://curd-state.onrender.com/api/countries/')
         .then(response => {
             const formattedData = response.data.map(c => ({ value: c.id, label: c.name }));
             setCountries(formattedData);
@@ -30,7 +30,7 @@
         setCities([]);
 
         if (selectedOption) {
-        axios.get(`http://127.0.0.1:8000/api/states/?country=${selectedOption.value}`)
+        axios.get(`https://curd-state.onrender.com/api/states/?country=${selectedOption.value}`)
             .then(response => {
             const formattedData = response.data.map(s => ({ value: s.id, label: s.name }));
             setStates(formattedData);
@@ -46,7 +46,7 @@
         setCities([]);
 
         if (selectedOption) {
-        axios.get(`http://127.0.0.1:8000/api/cities/?state=${selectedOption.value}`)
+        axios.get(`https://curd-state.onrender.com/api/cities/?state=${selectedOption.value}`)
             .then(response => {
             const formattedData = response.data.map(ct => ({ value: ct.id, label: ct.name }));
             setCities(formattedData);
